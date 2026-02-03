@@ -291,13 +291,18 @@ body {
     gap: 8px;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    max-width: 92vw;
+    padding: 0 12px;
 }
 .final-yes span {
     font-family: 'Dancing Script', cursive;
-    font-size: 4rem;
+    font-size: clamp(2.2rem, 9vw, 4rem);
     color: #ff1a3d;
     text-shadow: 0 0 12px rgba(255, 26, 61, 0.7);
     animation: dance 1.2s ease-in-out infinite, glowPulse 2.2s ease-in-out infinite;
+    line-height: 1.05;
+    margin: 2px 3px;
 }
 @keyframes dance {
     0% { transform: translateY(0) rotate(0deg); }
@@ -308,6 +313,12 @@ body {
     0% { text-shadow: 0 0 6px rgba(255, 26, 61, 0.4); }
     50% { text-shadow: 0 0 16px rgba(255, 26, 61, 0.9); }
     100% { text-shadow: 0 0 6px rgba(255, 26, 61, 0.4); }
+}
+
+@media (max-width: 480px) {
+    .final-yes span {
+        font-size: clamp(2rem, 10vw, 3.2rem);
+    }
 }
 
 /* Final black page with red glowing corners */

@@ -1,0 +1,331 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    background: #000;
+    color: #fff;
+}
+
+.premium {
+    background: linear-gradient(-45deg, #0c0c0c, #1a1a1a, #2b0f1f, #120812);
+    background-size: 400% 400%;
+    animation: premiumBG 18s ease infinite;
+}
+
+@keyframes premiumBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.scene {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden { display: none !important; }
+.active { opacity: 1; }
+
+.intro-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.bouquet {
+    width: 240px;
+    height: 240px;
+    border-radius: 20px;
+    background-image: url("rose 1.webp");
+    background-size: cover;
+    background-position: center;
+    animation: pulse 1.5s infinite, glow 3s ease-in-out infinite;
+    box-shadow: 0 0 35px rgba(255, 0, 85, 0.5);
+}
+
+.bouquet-btn {
+    padding: 14px 28px;
+    border: none;
+    border-radius: 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    background: #ff4d6d;
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(255, 77, 109, 0.4);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes glow {
+    0% { filter: drop-shadow(0 0 10px rgba(255, 0, 85, 0.4)); }
+    50% { filter: drop-shadow(0 0 30px rgba(255, 0, 85, 0.8)); }
+    100% { filter: drop-shadow(0 0 10px rgba(255, 0, 85, 0.4)); }
+}
+
+.question-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    color: #ff4d6d;
+    text-shadow: 0 0 10px rgba(255, 77, 109, 0.3);
+    animation: pulse 1.5s infinite;
+    margin-bottom: 2rem;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    padding: 14px 36px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.yes-btn {
+    background: #ff4d6d;
+    color: #fff;
+    box-shadow: 0 6px 18px rgba(255, 77, 109, 0.4);
+}
+.yes-btn:hover { transform: scale(1.05); }
+
+.no-btn {
+    background: rgba(255, 255, 255, 0.85);
+    color: #ff4d6d;
+    border: 2px solid #ff4d6d;
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(255, 77, 109, 0.15);
+    padding: 2rem;
+}
+
+.title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.4rem;
+    color: #ff4d6d;
+    margin-bottom: 1rem;
+}
+
+.quotes-container {
+    max-width: 700px;
+    width: 90%;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.quote-box {
+    font-size: 1.5rem;
+    line-height: 1.7;
+    min-height: 120px;
+    padding: 1rem 0;
+    animation: fade 0.6s ease-in-out;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+    justify-content: center;
+}
+
+.wish {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+    justify-content: center;
+}
+
+.wish-input {
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.25);
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    width: 60%;
+}
+
+#petals-container {
+    position: fixed;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+}
+
+.petal {
+    position: absolute;
+    font-size: 1.6rem;
+    animation: fall 6s linear forwards;
+    opacity: 0.9;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-10vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 1; }
+    100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
+@keyframes fade {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Memories Slideshow */
+.memories-container {
+    max-width: 900px;
+    width: 92%;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 16px;
+    padding: 16px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 12px 36px rgba(255, 77, 109, 0.18);
+    animation: float 6s ease-in-out infinite;
+}
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    max-height: 580px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+    animation: fade 1s;
+}
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 12px;
+    filter: drop-shadow(0 8px 24px rgba(0,0,0,0.35));
+}
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 12px;
+    margin-top: -22px;
+    color: #ff4d6d;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.3s ease;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.3);
+    user-select: none;
+}
+.next { right: 10px; }
+.prev { left: 10px; }
+.prev:hover, .next:hover { background: rgba(0,0,0,0.5); }
+.dots {
+    text-align: center;
+    margin-top: 10px;
+}
+.dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 3px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+.active-dot, .dot:hover { background-color: #ff4d6d; }
+
+/* Poem and Final message */
+.poem-container {
+    max-width: 700px;
+    width: 92%;
+    margin: 0 auto;
+}
+.poem-text p {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #eee;
+    margin: 6px 0;
+}
+.timer-container {
+    margin-top: 10px;
+    font-weight: 700;
+    color: #ff4d6d;
+}
+.final-yes {
+    margin-top: 20px;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+}
+.final-yes span {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    color: #ff1a3d;
+    text-shadow: 0 0 12px rgba(255, 26, 61, 0.7);
+    animation: dance 1.2s ease-in-out infinite, glowPulse 2.2s ease-in-out infinite;
+}
+@keyframes dance {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-8px) rotate(2deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+}
+@keyframes glowPulse {
+    0% { text-shadow: 0 0 6px rgba(255, 26, 61, 0.4); }
+    50% { text-shadow: 0 0 16px rgba(255, 26, 61, 0.9); }
+    100% { text-shadow: 0 0 6px rgba(255, 26, 61, 0.4); }
+}
+
+/* Final black page with red glowing corners */
+.final-scene {
+    width: 100%;
+    height: 100%;
+    background:
+      radial-gradient(60vmax 60vmax at 0% 0%, rgba(255,0,60,0.35), rgba(255,0,60,0) 60%),
+      radial-gradient(60vmax 60vmax at 100% 0%, rgba(255,0,60,0.35), rgba(255,0,60,0) 60%),
+      radial-gradient(60vmax 60vmax at 0% 100%, rgba(255,0,60,0.35), rgba(255,0,60,0) 60%),
+      radial-gradient(60vmax 60vmax at 100% 100%, rgba(255,0,60,0.35), rgba(255,0,60,0) 60%),
+      #000;
+}
+
+#hearts-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 9999;
+    pointer-events: none;
+}

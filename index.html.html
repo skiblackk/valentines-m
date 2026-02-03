@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Mariah</title>
+    <link rel="stylesheet" href="style_mariah.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="scene-intro" class="scene active dark">
+        <div class="intro-container">
+            <div class="bouquet"></div>
+            <button id="start-mariah" class="bouquet-btn">Press the bouquet</button>
+        </div>
+    </div>
+
+    <div id="scene-question" class="scene hidden">
+        <h1 class="question-text">Will you be my Valentine, Mariah?</h1>
+        <div class="buttons">
+            <button id="yes-btn-mariah" class="btn yes-btn">YES</button>
+            <button id="no-btn-mariah" class="btn no-btn">NO</button>
+        </div>
+    </div>
+
+    <div id="scene-quotes" class="scene hidden">
+        <div class="glass quotes-container">
+            <h2 class="title">A few words for you, Mariah</h2>
+            <div id="quote-box" class="quote-box"></div>
+            <div class="actions">
+                <button id="confetti" class="btn yes-btn">Heart Confetti</button>
+                <button id="petals" class="btn no-btn">Petal Shower</button>
+            </div>
+            <div class="wish">
+                <input id="wish-input" class="wish-input" placeholder="Type a sweet wish">
+                <button id="wish-show" class="btn yes-btn">Show</button>
+            </div>
+        </div>
+        <div id="music-player-mariah"></div>
+        <div id="petals-container"></div>
+        <div class="memories-container glass" style="margin-top: 18px;">
+            <h2 class="title">Our memories</h2>
+            <div class="slideshow-container">
+                <div class="slide"><img src="sx1.jpeg" alt="memory 1"></div>
+                <div class="slide"><img src="sx2.jpeg" alt="memory 2"></div>
+                <div class="slide"><img src="sx3.jpeg" alt="memory 3"></div>
+                <div class="slide"><img src="sx4.jpeg" alt="memory 4"></div>
+                <a class="prev">&#10094;</a>
+                <a class="next">&#10095;</a>
+            </div>
+            <div class="dots">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </div>
+
+    <div id="scene-poem-mariah" class="scene hidden">
+        <div class="glass poem-container">
+            <h2 class="title">For Mariah</h2>
+            <div class="poem-text">
+                <p>You are the steady light in my darkest days,</p>
+                <p>Grace in your voice, warmth in your ways.</p>
+                <p>When storms rolled in and hope felt thin,</p>
+                <p>You held my heart and helped me win.</p>
+                <br>
+                <p>For kindness given, for patience true,</p>
+                <p>For all the care I found in you.</p>
+                <p>You are amazing — in all you do,</p>
+                <p>And I’m grateful I can say it to you.</p>
+            </div>
+            <div class="timer-container">
+                <p>Next surprise in: <span id="poem-timer-mariah">45</span>s</p>
+            </div>
+        </div>
+        <div id="hearts-overlay" class="hidden"></div>
+    </div>
+    
+    <div id="scene-final-mariah" class="scene hidden final-scene">
+        <div id="final-yes" class="final-yes"></div>
+    </div>
+
+    <script src="script_mariah.js"></script>
+</body>
+</html>
